@@ -7,10 +7,9 @@
 </div>
 
 ---
-
-
-
 Simple and easy library to Validate data in python
+
+![example workflow](https://github.com/MajAhd/py_validation/actions/workflows/python-package.yml/badge.svg)
 
 ** Under Develop
 
