@@ -24,5 +24,9 @@ class BindRules:
         match self.rule:
             case "required":
                 return Rules.Required(value).is_required()
+            case "accepted":
+                return Rules.Accepted(value).is_accepted()
+            case "boolean":
+                return Rules.Boolean(value).is_boolean()
             case _:
                 return "Validation Not Defined!"
