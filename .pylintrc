@@ -1,0 +1,14 @@
+[MASTER]
+disable=
+    C0114, # missing-module-docstring
+    #C0115, #(missing-class-docstring)
+    #C0116, #(missing-function-docstring)
+    C0301, #(missing-line-toolong)
+    C0103, #(Class constant name to UPPER_CASE naming style)
+    R0903, #( Too few public methods )
+    E1101, # Instance of 'MongoEngine'
+    W0703, # Catching too general exception Exception (broad-except)
+    #should remove
+    R0201, #Method could be a function (no-self-use)
+    W0613, #Unused argument 'key' (unused-argument)
+    W0238, #Unused private member `Required.__data` (unused-private-member)

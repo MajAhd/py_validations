@@ -1,15 +1,11 @@
-class PyValidation:
-    """@doc
-     data ={
-       name: "Majid",
-       age: 34
-     }
-     role = {
-       name: ["required" , "max:20" , "alpha"],
-       age: ["required" ,"numeric", "min:18" , "max:50"
-     }
-     validator = PyValidation(data, role)
+import pyvalidation.factory as Factory
 
+
+class PyValidation:
+    """
+    start validate data by rules
+    @param rules : collection of validation rules based on name
+    @:param data : collection of data
     """
 
     def __init__(self, data, rules):
@@ -17,10 +13,16 @@ class PyValidation:
         self.data = data
 
     def make(self):
+        """
+        make validation
+        :return: dictionary
+        """
+        validate = {}
         for name in self.data:
-            data_name = name
-            data_val = self.data[name]
-            if data_name in self.rules:
-                print("data is {0} value {1}".format(data_name, data_val))
-            else:
-                print("field {0} not found".format(data_name))
+            key = name
+            value = self.data[name]
+            if key in self.rules:
+                result = Factory.Validate(key, value, self.rules[key], self.data).validation()
+                if len(result) > 0:
+                    validate[key] = result
+        return validate

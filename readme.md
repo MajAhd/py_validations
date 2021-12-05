@@ -8,7 +8,7 @@
 
 ---
 
-[![Build Status](https://app.travis-ci.com/MajAhd/py_validation.svg?branch=master)](https://app.travis-ci.com/MajAhd/py_validation)
+
 
 Simple and easy library to Validate data in python
 
@@ -19,6 +19,7 @@ Simple and easy library to Validate data in python
 ```python
 
 ```
+
 ## Usage
 
 --- 
@@ -26,6 +27,7 @@ Simple and easy library to Validate data in python
 ```python
 
 ```
+
 ## Documentation
 
 ## Author
