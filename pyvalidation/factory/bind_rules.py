@@ -28,5 +28,11 @@ class BindRules:
                 return Rules.Accepted(value).is_accepted()
             case "boolean":
                 return Rules.Boolean(value).is_boolean()
+            case "confirmed":
+                confirmed_name = f"{key}_confirmation"
+                if Rules.Field(self.all_data, confirmed_name).field_exist():
+                    target = self.all_data[confirmed_name]
+                    return Rules.Confirmation(value, target)
+                return False
             case _:
                 return "Validation Not Defined!"
