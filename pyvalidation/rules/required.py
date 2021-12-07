@@ -3,6 +3,7 @@ class Required:
      Required Validation
      check data is existed and has value on different rules
     """
+
     def __init__(self, value, data=None):
         if data is None:
             data = []
