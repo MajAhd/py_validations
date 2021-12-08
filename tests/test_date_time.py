@@ -72,7 +72,6 @@ class TestDateTime(unittest.TestCase):
         self.assertFalse(is_date_ba_failed)
 
     def test_pyvalidation_datetime_passed(self):
-        self.assertTrue(True)
         data = {
             "birthdate": "1990-04-17",
             "start_time": "13:30",
@@ -89,7 +88,6 @@ class TestDateTime(unittest.TestCase):
         self.assertEqual(validate, {})
 
     def test_pyvalidation_datetime_failed(self):
-        self.assertTrue(True)
         data = {
             "birthdate": "199004-17",
             "start_time": "1330",
@@ -109,7 +107,6 @@ class TestDateTime(unittest.TestCase):
                                     'start_time': ['The start_time is not a valid time.']})
 
     def test_pyvalidation_datetime_different_passed(self):
-        self.assertTrue(True)
         data = {
             "eq_bd": "1990-04-17",
             "after_bd": "1990-04-20",
@@ -128,7 +125,6 @@ class TestDateTime(unittest.TestCase):
         self.assertEqual(validate, {})
 
     def test_pyvalidation_datetime_different_failed(self):
-        self.assertTrue(True)
         data = {
             "eq_bd": "1990-04-14",
             "after_bd": "1990-04-16",

@@ -34,6 +34,7 @@ class BindRules:
                     target = self.all_data[confirmed_name]
                     return Rules.Confirmation(value, target)
                 return False
+            # Date Time Validation
             case "date":
                 return Rules.DateTime(value).is_date()
             case "time":
@@ -62,5 +63,18 @@ class BindRules:
                 if Rules.DateTime(self.rule_val).is_date():
                     return Rules.DateTime(value).is_before_or_equal(self.rule_val)
                 return False
+            # different Validation
+            case "different":
+                return Rules.Different(value).is_different(self.rule_val)
+            case "equal":
+                return Rules.Different(value).is_equal(self.rule_val)
+            case "gt":
+                return Rules.Different(value).gt(self.rule_val)
+            case "gte":
+                return Rules.Different(value).gte(self.rule_val)
+            case "lt":
+                return Rules.Different(value).lt(self.rule_val)
+            case "lte":
+                return Rules.Different(value).lte(self.rule_val)
             case _:
                 return "Validation Not Defined!"
