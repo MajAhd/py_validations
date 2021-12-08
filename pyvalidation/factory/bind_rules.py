@@ -40,9 +40,13 @@ class BindRules:
             case "alpha":
                 return Rules.Alpha(value).is_alpha()
             case "start_with":
-                return Rules.Alpha(value).start_with(self.rule_val)
+                if Rules.Alpha(value).is_string():
+                    return Rules.Alpha(value).start_with(self.rule_val)
+                return False
             case "end_with":
-                return Rules.Alpha(value).end_with(self.rule_val)
+                if Rules.Alpha(value).is_string():
+                    return Rules.Alpha(value).end_with(self.rule_val)
+                return False
             # Date Time Validation
             case "date":
                 return Rules.DateTime(value).is_date()
