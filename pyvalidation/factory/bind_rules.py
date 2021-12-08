@@ -102,5 +102,8 @@ class BindRules:
                 return Rules.Number(value).is_numeric()
             case "digits":
                 return Rules.Number(value).digits(self.rule_val)
+            # UUID
+            case "uuid":
+                return Rules.Uuid(value).is_uuid()
             case _:
                 return "Validation Not Defined!"
