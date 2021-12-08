@@ -97,5 +97,10 @@ class BindRules:
                 return Rules.Max(value).is_maximum(self.rule_val)
             case "min":
                 return Rules.Min(value).is_minimum(self.rule_val)
+            # Number
+            case "numeric":
+                return Rules.Number(value).is_numeric()
+            case "digits":
+                return Rules.Number(value).digits(self.rule_val)
             case _:
                 return "Validation Not Defined!"

@@ -9,3 +9,4 @@ from .inside import Inside
 from .internet import Internet
 from .max import Max
 from .min import Min
+from .number import Number
