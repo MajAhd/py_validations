@@ -76,5 +76,9 @@ class BindRules:
                 return Rules.Different(value).lt(self.rule_val)
             case "lte":
                 return Rules.Different(value).lte(self.rule_val)
+            case "in":
+                return Rules.Inside(value).is_in(self.rule_val)
+            case "not_in":
+                return Rules.Inside(value).is_not_in(self.rule_val)
             case _:
                 return "Validation Not Defined!"

@@ -5,3 +5,4 @@ from .field import Field
 from .confirmation import Confirmation
 from .datetime import DateTime
 from .different import Different
+from .inside import Inside
