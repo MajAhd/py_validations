@@ -76,9 +76,21 @@ class BindRules:
                 return Rules.Different(value).lt(self.rule_val)
             case "lte":
                 return Rules.Different(value).lte(self.rule_val)
+            # Inside
             case "in":
                 return Rules.Inside(value).is_in(self.rule_val)
             case "not_in":
                 return Rules.Inside(value).is_not_in(self.rule_val)
+            # Internet
+            case "email":
+                return Rules.Internet(value).email()
+            case "url":
+                return Rules.Internet(value).url()
+            case "ip":
+                return Rules.Internet(value).ip()
+            case "ipv4":
+                return Rules.Internet(value).ipv4()
+            case "ipv6":
+                return Rules.Internet(value).ipv6()
             case _:
                 return "Validation Not Defined!"
