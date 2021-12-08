@@ -1,6 +1,7 @@
 from .required import Required
 from .boolean import Boolean
 from .accepted import Accepted
+from .alpha import Alpha
 from .field import Field
 from .confirmation import Confirmation
 from .datetime import DateTime

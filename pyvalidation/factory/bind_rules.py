@@ -32,8 +32,17 @@ class BindRules:
                 confirmed_name = f"{key}_confirmation"
                 if Rules.Field(self.all_data, confirmed_name).field_exist():
                     target = self.all_data[confirmed_name]
-                    return Rules.Confirmation(value, target)
+                    return Rules.Confirmation(value, target).is_confirmed()
                 return False
+            # String And Alpha
+            case "string":
+                return Rules.Alpha(value).is_string()
+            case "alpha":
+                return Rules.Alpha(value).is_alpha()
+            case "start_with":
+                return Rules.Alpha(value).start_with(self.rule_val)
+            case "end_with":
+                return Rules.Alpha(value).end_with(self.rule_val)
             # Date Time Validation
             case "date":
                 return Rules.DateTime(value).is_date()
