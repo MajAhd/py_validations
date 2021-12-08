@@ -140,13 +140,13 @@ class TestDateTime(unittest.TestCase):
             "before_equal_bd": ["required", "before_or_equal:1990-04-17"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {'after_bd': ['The after_bd must be a date after to 1990-04-16.'],
+        self.assertEqual(validate, {'after_bd': ['The after_bd must be a date after to 1990-04-17.'],
                                     'after_equal_bd': ['The after_equal_bd must be a date after or equal to '
-                                                       '1990-04-15.'],
+                                                       '1990-04-17.'],
                                     'before_bd': ['The before_bd must be a date before to 1990-04-17.'],
                                     'before_equal_bd': ['The before_equal_bd must be a date before or equal to '
-                                                        '1990-04-18.'],
-                                    'eq_bd': ['The eq_bd must be a date equal to 1990-04-14.']})
+                                                        '1990-04-17.'],
+                                    'eq_bd': ['The eq_bd must be a date equal to 1990-04-17.']})
 
 
 if __name__ == '__main__':

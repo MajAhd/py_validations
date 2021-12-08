@@ -184,17 +184,17 @@ class TestDifferent(unittest.TestCase):
         }
         validate = PyValidation.PyValidation(data, rules).make()
         self.assertEqual(validate, {'num_diff': ['The num_diff must be different to 233.'],
-                                    'num_eq': ['The num_eq must be equal to 200.'],
+                                    'num_eq': ['The num_eq must be equal to 100.'],
                                     'num_gt': ['The num_gt must be greater than 100.'],
-                                    'num_gte': ['The num_gte must be greater or equal to 199.'],
+                                    'num_gte': ['The num_gte must be greater or equal to 200.'],
                                     'num_lt': ['The num_lt must be less than 100.'],
-                                    'num_lte': ['The num_lte must be less or equal to 201.'],
+                                    'num_lte': ['The num_lte must be less or equal to 200.'],
                                     'str_diff': ['The str_diff must be different to MQ233.'],
-                                    'str_eq': ['The str_eq must be equal to MQ200.'],
+                                    'str_eq': ['The str_eq must be equal to MQ100.'],
                                     'str_gt': ['The str_gt must be greater than MQ200.'],
-                                    'str_gte': ['The str_gte must be greater or equal to MQ20.'],
-                                    'str_lt': ['The str_lt must be less than abcdef.'],
-                                    'str_lte': ['The str_lte must be less or equal to abcde.']})
+                                    'str_gte': ['The str_gte must be greater or equal to MQ200.'],
+                                    'str_lt': ['The str_lt must be less than ABCD.'],
+                                    'str_lte': ['The str_lte must be less or equal to ABCD.']})
 
 
 if __name__ == '__main__':

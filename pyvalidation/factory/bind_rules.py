@@ -92,5 +92,10 @@ class BindRules:
                 return Rules.Internet(value).ipv4()
             case "ipv6":
                 return Rules.Internet(value).ipv6()
+            #  Max Min
+            case "max":
+                return Rules.Max(value).is_maximum(self.rule_val)
+            case "min":
+                return Rules.Min(value).is_minimum(self.rule_val)
             case _:
                 return "Validation Not Defined!"

@@ -25,5 +25,5 @@ class Validate:
             rule_value = None if len(split_rule) < 2 else split_rule[1]
             is_passed = BindRules(rule, rule_value, self.__all_data).build(self.__key, self.__value)
             if not is_passed:
-                messages.append(BindException(self.__key, self.__value).build(rule))
+                messages.append(BindException(self.__key, rule_value).build(rule))
         return messages
