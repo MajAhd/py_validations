@@ -29,7 +29,7 @@ jobs:
 
       - name: Test By Pylint
         run: |
-          pylint pyvalidations
+          pylint src
 
       - name: Python Unit Test
         run: |
