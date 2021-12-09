@@ -1,6 +1,6 @@
 import unittest
-import pyvalidation.rules as Rule
-import pyvalidation as PyValidation
+import src.rules as Rule
+import src as PyValidation
 
 
 class TestNumber(unittest.TestCase):

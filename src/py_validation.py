@@ -1,4 +1,4 @@
-import pyvalidation.factory as Factory
+import src.factory as Factory
 
 
 class PyValidation:
