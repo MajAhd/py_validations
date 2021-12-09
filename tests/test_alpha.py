@@ -1,6 +1,6 @@
 import unittest
-import src.rules as Rule
-import src as PyValidation
+import pyvalidation.rules as Rule
+import pyvalidation as PyValidation
 
 
 class TestAlpha(unittest.TestCase):

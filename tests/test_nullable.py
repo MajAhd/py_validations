@@ -1,5 +1,5 @@
 import unittest
-import src as PyValidation
+import pyvalidation as PyValidation
 
 
 class TestNullable(unittest.TestCase):
