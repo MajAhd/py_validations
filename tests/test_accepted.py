@@ -1,6 +1,6 @@
 import unittest
-import pyvalidation.rules as Rule
-import pyvalidation as PyValidation
+import pyvalidations.rules as Rule
+import pyvalidations as PyValidation
 
 
 class TestAccepted(unittest.TestCase):
@@ -43,7 +43,7 @@ class TestAccepted(unittest.TestCase):
             "accept_7": ["required", "accepted"],
             "accept_8": ["required", "accepted"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {'errors': {'accept_6': ['The accept_6 must be accepted.'],
                                                'accept_7': ['The accept_7 must be accepted.'],
                                                'accept_8': ['The accept_8 must be accepted.']},

@@ -1,6 +1,6 @@
 import unittest
-import pyvalidation.rules as Rule
-import pyvalidation as PyValidation
+import pyvalidations.rules as Rule
+import pyvalidations as PyValidation
 
 
 class TestBoolean(unittest.TestCase):
@@ -45,7 +45,7 @@ class TestBoolean(unittest.TestCase):
             "accept_7": ["required", "boolean"],
             "accept_8": ["required", "boolean"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {'errors': {'accept_5': ['The accept_5 may only boolean value : true , false , '
                                                             '1 or 0.'],
                                                'accept_6': ['The accept_6 may only boolean value : true , false , '

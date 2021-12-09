@@ -1,6 +1,6 @@
 import unittest
-import pyvalidation.rules as Rule
-import pyvalidation as PyValidation
+import pyvalidations.rules as Rule
+import pyvalidations as PyValidation
 
 
 class TestInternet(unittest.TestCase):
@@ -50,7 +50,7 @@ class TestInternet(unittest.TestCase):
             "ipv4": ["required", "ipv4"],
             "ipv6": ["required", "ipv6"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {"failed": False, "errors": {}})
 
     def test_pyvalidation_internet_failed(self):
@@ -68,7 +68,7 @@ class TestInternet(unittest.TestCase):
             "ipv4": ["required", "ipv4"],
             "ipv6": ["required", "ipv6"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {"failed": True,
                                     "errors": {
                                         'email': ['The email must be a valid email address.'],

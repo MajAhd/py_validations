@@ -1,5 +1,5 @@
 import unittest
-import pyvalidation as PyValidation
+import pyvalidations as PyValidation
 
 
 class TestNullable(unittest.TestCase):
@@ -15,7 +15,7 @@ class TestNullable(unittest.TestCase):
             "name_2": ["nullable", "alpha"],
             "name_3": ["nullable", "alpha"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {"failed": False, "errors": {}})
 
     def test_pyvalidation_nullable_failed(self):
@@ -27,7 +27,7 @@ class TestNullable(unittest.TestCase):
             "name_1": ["nullable", "alpha"],
             "number_2": ["nullable", "numeric"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {"failed": True,
                                     "errors": {
                                         'name_1': ['The name_1 may only contain letters.'],

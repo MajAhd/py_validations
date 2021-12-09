@@ -1,4 +1,4 @@
-import pyvalidation.rules as Rules
+import pyvalidations.rules as Rules
 
 
 class BindRules:

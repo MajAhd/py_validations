@@ -1,6 +1,6 @@
 import unittest
-import pyvalidation.rules as Rule
-import pyvalidation as PyValidation
+import pyvalidations.rules as Rule
+import pyvalidations as PyValidation
 
 
 class TestNumber(unittest.TestCase):
@@ -30,7 +30,7 @@ class TestNumber(unittest.TestCase):
             "month": ["required", "numeric"],
             "year": ["required", "digits:4"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {'errors': {}, 'failed': False})
 
     def test_pyvalidation_number_failed(self):
@@ -42,7 +42,7 @@ class TestNumber(unittest.TestCase):
             "month": ["required", "numeric"],
             "year": ["required", "digits:4"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {
             "failed": True,
             "errors": {

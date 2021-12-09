@@ -1,6 +1,6 @@
 import unittest
-import pyvalidation.rules as Rule
-import pyvalidation as PyValidation
+import pyvalidations.rules as Rule
+import pyvalidations as PyValidation
 
 
 class TestDifferent(unittest.TestCase):
@@ -150,7 +150,7 @@ class TestDifferent(unittest.TestCase):
             "str_lt": ["required", "lt:ABCD"],
             "str_lte": ["required", "lte:ABCD"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {'errors': {}, 'failed': False})
 
     def test_pyvalidation_different_failed(self):
@@ -182,7 +182,7 @@ class TestDifferent(unittest.TestCase):
             "str_lt": ["required", "lt:ABCD"],
             "str_lte": ["required", "lte:ABCD"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {'failed': True,
                                     "errors": {
                                         'num_diff': ['The num_diff must be different to 233.'],

@@ -1,7 +1,7 @@
-import pyvalidation.factory as Factory
+import pyvalidations.factory as Factory
 
 
-class PyValidation:
+class PyValidations:
     """
     start validate data by rules
     :param rules : collection of validation rules based on name

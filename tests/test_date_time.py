@@ -1,6 +1,6 @@
 import unittest
-import pyvalidation.rules as Rule
-import pyvalidation as PyValidation
+import pyvalidations.rules as Rule
+import pyvalidations as PyValidation
 
 
 class TestDateTime(unittest.TestCase):
@@ -84,7 +84,7 @@ class TestDateTime(unittest.TestCase):
             "expired": ["required", "datetime"],
             "my_zone": ["required", "timezone"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {'errors': {}, 'failed': False})
 
     def test_pyvalidation_datetime_failed(self):
@@ -100,7 +100,7 @@ class TestDateTime(unittest.TestCase):
             "expired": ["required", "datetime"],
             "my_zone": ["required", "timezone"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {'errors': {'birthdate': ['The birthdate is not a valid date.'],
                                                'expired': ['The expired is not a valid datetime.'],
                                                'my_zone': ['The my_zone is not a valid Timezone.'],
@@ -122,7 +122,7 @@ class TestDateTime(unittest.TestCase):
             "before_bd": ["required", "before:1990-04-17"],
             "before_equal_bd": ["required", "before_or_equal:1990-04-17"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {'errors': {}, 'failed': False})
 
     def test_pyvalidation_datetime_different_failed(self):
@@ -140,7 +140,7 @@ class TestDateTime(unittest.TestCase):
             "before_bd": ["required", "before:1990-04-17"],
             "before_equal_bd": ["required", "before_or_equal:1990-04-17"],
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {'errors': {'after_bd': ['The after_bd must be a date after to 1990-04-17.'],
                                                'after_equal_bd': ['The after_equal_bd must be a date after or '
                                                                   'equal to 1990-04-17.'],

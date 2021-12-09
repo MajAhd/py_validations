@@ -1,6 +1,6 @@
 import unittest
-import pyvalidation.rules as Rule
-import pyvalidation as PyValidation
+import pyvalidations.rules as Rule
+import pyvalidations as PyValidation
 
 
 class TestConfirmed(unittest.TestCase):
@@ -29,9 +29,9 @@ class TestConfirmed(unittest.TestCase):
             "password": ["required", "confirmed"],
         }
 
-        validate_passed = PyValidation.PyValidation(data_passed, rules_1).make()
+        validate_passed = PyValidation.PyValidations(data_passed, rules_1).make()
         self.assertEqual(validate_passed, {'errors': {}, 'failed': False})
-        validate_failed = PyValidation.PyValidation(data_failed, rules_2).make()
+        validate_failed = PyValidation.PyValidations(data_failed, rules_2).make()
         self.assertEqual(validate_failed, {'errors': {'password': ['The password confirmation does not match.']},
                                            'failed': True})
 

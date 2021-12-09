@@ -1,6 +1,6 @@
 import unittest
-import pyvalidation.rules as Rule
-import pyvalidation as PyValidation
+import pyvalidations.rules as Rule
+import pyvalidations as PyValidation
 
 
 class TestInside(unittest.TestCase):
@@ -45,7 +45,7 @@ class TestInside(unittest.TestCase):
             "grade": ["required", "in:a,b"],
 
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {'errors': {}, 'failed': False})
 
     def test_pyvalidation_in_failed(self):
@@ -60,7 +60,7 @@ class TestInside(unittest.TestCase):
             "grade": ["required", "in:a,b"],
 
         }
-        validate = PyValidation.PyValidation(data, rules).make()
+        validate = PyValidation.PyValidations(data, rules).make()
         self.assertEqual(validate, {"failed": True,
                                     "errors": {
                                         'europe': ['The selected europe is invalid.'],
