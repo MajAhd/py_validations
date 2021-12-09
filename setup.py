@@ -14,6 +14,7 @@ setup(
     project_urls={
         'Bug Reports': 'https://github.com/MajAhd/py_validation/issues',
         'Source': 'https://github.com/MajAhd/py_validation/',
+        'Wiki': 'https://github.com/MajAhd/py_validation/wiki',
     },
     license='LICENSE',
     description='Simple and easy library to Validate data in Python',

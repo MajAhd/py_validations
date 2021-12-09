@@ -31,7 +31,7 @@ class TestNumber(unittest.TestCase):
             "year": ["required", "digits:4"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {})
+        self.assertEqual(validate, {'errors': {}, 'failed': False})
 
     def test_pyvalidation_number_failed(self):
         data = {
@@ -43,8 +43,12 @@ class TestNumber(unittest.TestCase):
             "year": ["required", "digits:4"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {'month': ['The month must be a number.'],
-                                    'year': ['The year must be 4 digits.']})
+        self.assertEqual(validate, {
+            "failed": True,
+            "errors": {
+                'month': ['The month must be a number.'],
+                'year': ['The year must be 4 digits.']}
+        })
 
 
 if __name__ == '__main__':

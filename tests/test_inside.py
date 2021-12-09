@@ -46,7 +46,7 @@ class TestInside(unittest.TestCase):
 
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {})
+        self.assertEqual(validate, {'errors': {}, 'failed': False})
 
     def test_pyvalidation_in_failed(self):
         data = {
@@ -61,9 +61,12 @@ class TestInside(unittest.TestCase):
 
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {'europe': ['The selected europe is invalid.'],
-                                    'grade': ['The selected grade is invalid.'],
-                                    'north_america': ['The selected north_america is invalid.']})
+        self.assertEqual(validate, {"failed": True,
+                                    "errors": {
+                                        'europe': ['The selected europe is invalid.'],
+                                        'grade': ['The selected grade is invalid.'],
+                                        'north_america': ['The selected north_america is invalid.']}
+                                    })
 
 
 if __name__ == '__main__':

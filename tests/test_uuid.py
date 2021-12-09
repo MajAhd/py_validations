@@ -20,7 +20,7 @@ class TestUuid(unittest.TestCase):
             "uuid_1": ["required", "uuid"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {})
+        self.assertEqual(validate, {'errors': {}, 'failed': False})
 
     def test_pyvalidation_uuid_failed(self):
         data = {
@@ -31,7 +31,10 @@ class TestUuid(unittest.TestCase):
             "uuid_1": ["required", "uuid"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {'uuid_1': ['The uuid_1 must be a valid UUID.']})
+        self.assertEqual(validate, {'failed': True,
+                                    "errors": {
+                                        'uuid_1': ['The uuid_1 must be a valid UUID.']}
+                                    })
 
 
 if __name__ == '__main__':

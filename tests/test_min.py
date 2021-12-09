@@ -20,7 +20,7 @@ class TestMin(unittest.TestCase):
 
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {})
+        self.assertEqual(validate, {"failed": False, "errors": {}})
 
     def test_pyvalidation_min_failed(self):
         data = {
@@ -31,7 +31,10 @@ class TestMin(unittest.TestCase):
 
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {'age': ['The age must be at least 18.']})
+        self.assertEqual(validate, {"failed": True,
+                                    "errors": {
+                                        'age': ['The age must be at least 18.']}
+                                    })
 
 
 if __name__ == '__main__':

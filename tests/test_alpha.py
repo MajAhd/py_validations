@@ -37,7 +37,7 @@ class TestAlpha(unittest.TestCase):
             "end_code": ["required", "end_with:G123"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {})
+        self.assertEqual(validate, {'errors': {}, 'failed': False})
 
     def test_pyvalidation_alpha_failed(self):
         data = {
@@ -53,10 +53,11 @@ class TestAlpha(unittest.TestCase):
             "end_code": ["required", "end_with:G123"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {'end_code': ['The end_code may only end with G123.'],
-                                    'name': ['The name may only contain letters.'],
-                                    'start_code': ['The start_code may only start with G123.'],
-                                    'user_name': ['The user_name may only string.']})
+        self.assertEqual(validate, {'errors': {'end_code': ['The end_code may only end with G123.'],
+                                               'name': ['The name may only contain letters.'],
+                                               'start_code': ['The start_code may only start with G123.'],
+                                               'user_name': ['The user_name may only string.']},
+                                    'failed': True})
 
 
 if __name__ == '__main__':

@@ -51,7 +51,7 @@ class TestInternet(unittest.TestCase):
             "ipv6": ["required", "ipv6"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {})
+        self.assertEqual(validate, {"failed": False, "errors": {}})
 
     def test_pyvalidation_internet_failed(self):
         data = {
@@ -69,11 +69,14 @@ class TestInternet(unittest.TestCase):
             "ipv6": ["required", "ipv6"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {'email': ['The email must be a valid email address.'],
-                                    'ip': ['The ip must be a valid IP address.'],
-                                    'ipv4': ['The ipv4 must be a valid IPv4 address.'],
-                                    'ipv6': ['The ipv6 must be a valid IPv6 address.'],
-                                    'url': ['The url  must be a valid URL address.']})
+        self.assertEqual(validate, {"failed": True,
+                                    "errors": {
+                                        'email': ['The email must be a valid email address.'],
+                                        'ip': ['The ip must be a valid IP address.'],
+                                        'ipv4': ['The ipv4 must be a valid IPv4 address.'],
+                                        'ipv6': ['The ipv6 must be a valid IPv6 address.'],
+                                        'url': ['The url  must be a valid URL address.']}
+                                    })
 
 
 if __name__ == '__main__':

@@ -46,10 +46,15 @@ class TestBoolean(unittest.TestCase):
             "accept_8": ["required", "boolean"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {'accept_5': ['The accept_5 may only boolean value : true , false , 1 or 0.'],
-                                    'accept_6': ['The accept_6 may only boolean value : true , false , 1 or 0.'],
-                                    'accept_7': ['The accept_7 may only boolean value : true , false , 1 or 0.'],
-                                    'accept_8': ['The accept_8 may only boolean value : true , false , 1 or 0.']})
+        self.assertEqual(validate, {'errors': {'accept_5': ['The accept_5 may only boolean value : true , false , '
+                                                            '1 or 0.'],
+                                               'accept_6': ['The accept_6 may only boolean value : true , false , '
+                                                            '1 or 0.'],
+                                               'accept_7': ['The accept_7 may only boolean value : true , false , '
+                                                            '1 or 0.'],
+                                               'accept_8': ['The accept_8 may only boolean value : true , false , '
+                                                            '1 or 0.']},
+                                    'failed': True})
 
 
 if __name__ == '__main__':

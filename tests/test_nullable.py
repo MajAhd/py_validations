@@ -16,7 +16,7 @@ class TestNullable(unittest.TestCase):
             "name_3": ["nullable", "alpha"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {})
+        self.assertEqual(validate, {"failed": False, "errors": {}})
 
     def test_pyvalidation_nullable_failed(self):
         data = {
@@ -28,8 +28,11 @@ class TestNullable(unittest.TestCase):
             "number_2": ["nullable", "numeric"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {'name_1': ['The name_1 may only contain letters.'],
-                                    'number_2': ['The number_2 must be a number.']})
+        self.assertEqual(validate, {"failed": True,
+                                    "errors": {
+                                        'name_1': ['The name_1 may only contain letters.'],
+                                        'number_2': ['The number_2 must be a number.']}
+                                    })
 
 
 if __name__ == '__main__':

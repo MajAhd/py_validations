@@ -20,7 +20,7 @@ class TestMax(unittest.TestCase):
 
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {})
+        self.assertEqual(validate, {"failed": False, "errors": {}})
 
     def test_pyvalidation_max_failed(self):
         data = {
@@ -31,7 +31,10 @@ class TestMax(unittest.TestCase):
 
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {'age': ['The age may not be greater than 30.']})
+        self.assertEqual(validate, {"failed": True,
+                                    "errors": {
+                                        'age': ['The age may not be greater than 30.']}
+                                    })
 
 
 if __name__ == '__main__':

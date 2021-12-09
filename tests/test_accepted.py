@@ -44,9 +44,10 @@ class TestAccepted(unittest.TestCase):
             "accept_8": ["required", "accepted"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {'accept_6': ['The accept_6 must be accepted.'],
-                                    'accept_7': ['The accept_7 must be accepted.'],
-                                    'accept_8': ['The accept_8 must be accepted.']})
+        self.assertEqual(validate, {'errors': {'accept_6': ['The accept_6 must be accepted.'],
+                                               'accept_7': ['The accept_7 must be accepted.'],
+                                               'accept_8': ['The accept_8 must be accepted.']},
+                                    'failed': True})
 
 
 if __name__ == '__main__':

@@ -25,8 +25,11 @@ class TestRequired(unittest.TestCase):
             "name_3": ["required"],
         }
         validate = PyValidation.PyValidation(data, rules).make()
-        self.assertEqual(validate, {'name_2': ['The name_2 field is required.'],
-                                    'name_3': ['The name_3 field is required.']})
+        self.assertEqual(validate, {'failed': True,
+                                    "errors": {
+                                        'name_2': ['The name_2 field is required.'],
+                                        'name_3': ['The name_3 field is required.']}
+                                    })
 
 
 if __name__ == '__main__':
