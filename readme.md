@@ -2,7 +2,7 @@
 
 # Py Validations Pure Python Data Validator
 
-![Image](./img/PyValidation.png?raw=true "Elixir Validation")
+![Image](https://github.com/MajAhd/py_validations/blob/master/img/PyValidation.png?raw=true "Elixir Validation")
 
 </div>
 

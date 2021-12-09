@@ -17,6 +17,7 @@ setup(
     license='LICENSE',
     description='Simple and easy library to Validate data in Python',
     long_description=open('readme.md').read() + '\n \n' + open('CHANGELOG.md').read(),
+    long_description_content_type="text/markdown",
     classifiers=[
         'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',
