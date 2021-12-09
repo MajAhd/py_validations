@@ -1,6 +1,6 @@
 import unittest
-import pyvalidations.rules as Rule
-import pyvalidations as PyValidation
+import src.pyvalidations.rules as Rule
+import src as PyValidation
 
 
 class TestMax(unittest.TestCase):

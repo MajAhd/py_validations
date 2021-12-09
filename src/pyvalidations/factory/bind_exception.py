@@ -1,4 +1,4 @@
-import pyvalidations.lang as Lang
+import src.pyvalidations.lang as Lang
 
 
 class BindException:
@@ -7,6 +7,7 @@ class BindException:
      :param key data name
      :param value data value
     """
+
     def __init__(self, key, value):
         self.__key = key
         self.__value = value

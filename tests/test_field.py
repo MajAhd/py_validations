@@ -1,5 +1,5 @@
 import unittest
-import pyvalidations.rules as Rule
+import src.pyvalidations.rules as Rule
 
 
 class TestField(unittest.TestCase):

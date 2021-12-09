@@ -11,5 +11,4 @@ disable=
     R0911, #Too many return statements
     #should remove
     R0201, #Method could be a function (no-self-use)
-    W0613, #Unused argument 'key' (unused-argument)
     W0238, #Unused private member `Required.__data` (unused-private-member)
