@@ -7,7 +7,7 @@ setup(
     keywords='validation, data_validator , python_validator ,PyValidations',
     author_email='mjd.ahd.tbr@gmail.com',
     package_dir={'': 'pyvalidations'},
-    packages=find_packages(where='pyvalidations'),
+    packages=find_packages(where='PyValidation'),
     url='http://pypi.python.org/pypi/PyValidations/',
     project_urls={
         'Bug Reports': 'https://github.com/MajAhd/py_validations/issues',
