@@ -31,7 +31,7 @@ rules = {
     "first_name": ["required", "string", "max:128"] 
 }
 
-PyValidations(data, rules).make()
+pyvalidations.make(data, rules)
 ```
 
 ## Documentation
