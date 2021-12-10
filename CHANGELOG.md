@@ -1,6 +1,6 @@
 # Changelog
 ***
-## V0.1.0
+## V0.1.0-beta
 - Required
 - Accepted
 - Alpha & String
