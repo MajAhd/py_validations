@@ -20,7 +20,7 @@ class TestRequired(unittest.TestCase):
             "name_3": None,
         }
         rules = {
-            "name": ["required"],
+            "name_1": ["required"],
             "name_2": ["required"],
             "name_3": ["required"],
         }

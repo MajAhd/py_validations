@@ -7,9 +7,19 @@ class TestMin(unittest.TestCase):
 
     def test_min(self):
         passed_1 = Rule.Min(11).is_minimum("10")
+        passed_2 = Rule.Min("john").is_minimum("4")
+        passed_3 = Rule.Min(21.1).is_minimum("21.1")
         failed_1 = Rule.Min(9).is_minimum("10")
+        failed_2 = Rule.Min("john").is_minimum("5")
+        failed_3 = Rule.Min(21.1).is_minimum("22.1")
         self.assertTrue(passed_1)
         self.assertFalse(failed_1)
+        self.assertTrue(passed_1)
+        self.assertTrue(passed_2)
+        self.assertTrue(passed_3)
+        self.assertFalse(failed_1)
+        self.assertFalse(failed_2)
+        self.assertFalse(failed_3)
 
     def test_pyvalidation_min_passed(self):
         data = {

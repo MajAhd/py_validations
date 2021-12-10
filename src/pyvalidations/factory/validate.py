@@ -19,6 +19,7 @@ class Validate:
         :return: dict
         """
         messages = []
+
         if "nullable" in self.__rules and (self.__value == "" or self.__value is None):
             return messages
         for rule in self.__rules:

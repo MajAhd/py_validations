@@ -13,8 +13,17 @@ class Min:
         :return: bool
         """
         try:
-            if str.isdigit(target):
-                return self.value >= int(target)
-            return False
+            if isinstance(self.value, int):
+                try:
+                    return self.value >= int(target)
+                except ValueError:
+                    return False
+
+            if isinstance(self.value, float):
+                try:
+                    return self.value >= float(target)
+                except ValueError:
+                    return False
+            return len(self.value) >= int(target)
         except Exception:
             return False

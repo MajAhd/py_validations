@@ -31,7 +31,6 @@ class TestAccepted(unittest.TestCase):
             "accept_6": "off",
             "accept_7": "false",
             "accept_8": "0",
-
         }
         rules = {
             "accept_1": ["required", "accepted"],

@@ -1,4 +1,4 @@
-import src.pyvalidations.lang as Lang
+from .. import lang as Lang
 
 
 class BindException:

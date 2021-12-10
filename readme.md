@@ -15,7 +15,7 @@ Simple and easy library to Validate data in python
 ## install
 
 ```
-  pip install pyvalidations
+  pip install PyValidations
 ```
 
 ## Usage
