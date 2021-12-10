@@ -9,6 +9,7 @@ disable=
     E1101, # Instance of 'MongoEngine'
     W0703, # Catching too general exception Exception (broad-except)
     R0911, #Too many return statements
+    E0401,
     #should remove
     R0201, #Method could be a function (no-self-use)
     W0238, #Unused private member `Required.__data` (unused-private-member)

@@ -1,6 +1,6 @@
 import unittest
 import src.pyvalidations.rules as Rule
-import src as PyValidation
+import src.pyvalidations as PyValidation
 
 
 class TestRequired(unittest.TestCase):
@@ -24,7 +24,7 @@ class TestRequired(unittest.TestCase):
             "name_2": ["required"],
             "name_3": ["required"],
         }
-        validate = PyValidation.PyValidations(data, rules).make()
+        validate = PyValidation.make(data, rules)
         self.assertEqual(validate, {'failed': True,
                                     "errors": {
                                         'name_2': ['The name_2 field is required.'],

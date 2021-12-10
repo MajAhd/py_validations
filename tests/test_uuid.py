@@ -1,6 +1,6 @@
 import unittest
 import src.pyvalidations.rules as Rule
-import src as PyValidation
+import src.pyvalidations as PyValidation
 
 
 class TestUuid(unittest.TestCase):
@@ -19,7 +19,7 @@ class TestUuid(unittest.TestCase):
         rules = {
             "uuid_1": ["required", "uuid"],
         }
-        validate = PyValidation.PyValidations(data, rules).make()
+        validate = PyValidation.make(data, rules)
         self.assertEqual(validate, {'errors': {}, 'failed': False})
 
     def test_pyvalidation_uuid_failed(self):
@@ -30,7 +30,7 @@ class TestUuid(unittest.TestCase):
         rules = {
             "uuid_1": ["required", "uuid"],
         }
-        validate = PyValidation.PyValidations(data, rules).make()
+        validate = PyValidation.make(data, rules)
         self.assertEqual(validate, {'failed': True,
                                     "errors": {
                                         'uuid_1': ['The uuid_1 must be a valid UUID.']}

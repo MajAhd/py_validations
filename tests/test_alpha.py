@@ -1,6 +1,6 @@
 import unittest
 import src.pyvalidations.rules as Rule
-import src as PyValidation
+import src.pyvalidations as PyValidation
 
 
 class TestAlpha(unittest.TestCase):
@@ -36,7 +36,7 @@ class TestAlpha(unittest.TestCase):
             "start_code": ["required", "start_with:G123"],
             "end_code": ["required", "end_with:G123"],
         }
-        validate = PyValidation.PyValidations(data, rules).make()
+        validate = PyValidation.make(data, rules)
         self.assertEqual(validate, {'errors': {}, 'failed': False})
 
     def test_pyvalidation_alpha_failed(self):
@@ -52,7 +52,7 @@ class TestAlpha(unittest.TestCase):
             "start_code": ["required", "start_with:G123"],
             "end_code": ["required", "end_with:G123"],
         }
-        validate = PyValidation.PyValidations(data, rules).make()
+        validate = PyValidation.make(data, rules)
         self.assertEqual(validate, {'errors': {'end_code': ['The end_code may only end with G123.'],
                                                'name': ['The name may only contain letters.'],
                                                'start_code': ['The start_code may only start with G123.'],

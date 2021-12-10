@@ -1,6 +1,6 @@
 import unittest
 import src.pyvalidations.rules as Rule
-import src as PyValidation
+import src.pyvalidations as PyValidation
 
 
 class TestMax(unittest.TestCase):
@@ -19,7 +19,7 @@ class TestMax(unittest.TestCase):
             "age": ["required", "max:40"],
 
         }
-        validate = PyValidation.PyValidations(data, rules).make()
+        validate = PyValidation.make(data, rules)
         self.assertEqual(validate, {"failed": False, "errors": {}})
 
     def test_pyvalidation_max_failed(self):
@@ -30,7 +30,7 @@ class TestMax(unittest.TestCase):
             "age": ["required", "max:30"],
 
         }
-        validate = PyValidation.PyValidations(data, rules).make()
+        validate = PyValidation.make(data, rules)
         self.assertEqual(validate, {"failed": True,
                                     "errors": {
                                         'age': ['The age may not be greater than 30.']}
