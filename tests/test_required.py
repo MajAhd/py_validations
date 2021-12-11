@@ -31,6 +31,93 @@ class TestRequired(unittest.TestCase):
                                         'name_3': ['The name_3 field is required.']}
                                     })
 
+    def test_required_if(self):
+        data = {
+            "first_name": "Majid",
+        }
+        passed = Rule.Required("doe", data).required_if("first_name")
+        self.assertTrue(passed)
+        failed = Rule.Required("", data).required_if("first_name_2")
+        self.assertFalse(failed)
+
+    def test_required_if_passed(self):
+        data = {
+            "first_name": "",
+            "last_name": "Ahmaditabar123",
+            "age": "33",
+        }
+        rules = {
+            "first_name": ["nullable", "alpha"],
+            "last_name": ["required_if:first_name", "alpha"],
+            "age": ["required_if:first_name", "numeric"],
+        }
+
+        validate = PyValidation.make(data, rules)
+        self.assertEqual(validate, {'errors': {}, 'failed': False})
+
+    def test_required_if_failed(self):
+        data = {
+            "first_name": "Majid",
+            "last_name": "Ahmaditabar123",
+            "age": "",
+        }
+        rules = {
+            "first_name": ["nullable", "alpha"],
+            "last_name": ["required_if:first_name", "alpha"],
+            "age": ["required_if:first_name", "numeric"],
+        }
+
+        validate = PyValidation.make(data, rules)
+        self.assertEqual(validate, {
+            'errors': {'last_name': ['The last_name may only contain letters.'],
+                       'age': ['The age field is required when first_name is exist.',
+                               'The age must be a number.']},
+            'failed': True})
+
+    def test_required_unless(self):
+        data = {
+            "email": "example@email.com",
+            "email_2": "",
+        }
+        passed_1 = Rule.Required("", data).required_unless("email_2")
+        passed_2 = Rule.Required("123456", data).required_unless("email_3")
+        self.assertTrue(passed_1)
+        self.assertTrue(passed_2)
+        failed_1 = Rule.Required("", data).required_unless("email")
+        self.assertFalse(failed_1)
+
+    def test_required_unless_passed(self):
+        data = {
+            "email": "example@email.com",
+            "phone": "s123456",
+        }
+        rules = {
+            "email": ["nullable", "email"],
+            "phone": ["required_unless:email", "numeric"],
+        }
+
+        validate = PyValidation.make(data, rules)
+        self.assertEqual(validate, {'errors': {}, 'failed': False})
+
+    def test_required_unless_failed(self):
+        data = {
+            "email": "",
+            "phone": "s123456",
+            "name": "",
+        }
+        rules = {
+            "email": ["nullable", "email"],
+            "phone": ["required_unless:email", "numeric"],
+            "name": ["required_unless:email", "alpyha"],
+        }
+
+        validate = PyValidation.make(data, rules)
+        self.assertEqual(validate, {
+            'errors': {'name': ['The name field is required unless email is not exist or empty.'],
+                       'phone': ['The phone must be a number.']
+                       },
+            'failed': True})
+
 
 if __name__ == '__main__':
     unittest.main()
