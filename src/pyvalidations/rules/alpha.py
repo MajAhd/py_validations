@@ -14,14 +14,20 @@ class Alpha:
         value mus be a string
         :return: bool
         """
-        return isinstance(self.value, str)
+        try:
+            return isinstance(self.value, str)
+        except Exception:
+            return False
 
     def is_alpha(self):
         """
         Value must be alphabetic
         :return: bool
         """
-        return re.match(r'^[A-Za-z]+$', self.value.replace(" ", ""))
+        try:
+            return re.match(r'^[A-Za-z]+$', self.value.replace(" ", ""))
+        except Exception:
+            return False
 
     def start_with(self, target):
         """
@@ -29,9 +35,12 @@ class Alpha:
         :param target: string
         :return: bool
         """
-        if len(target) > len(self.value):
+        try:
+            if len(target) > len(self.value):
+                return False
+            return self.value[0:len(target)] == target
+        except Exception:
             return False
-        return self.value[0:len(target)] == target
 
     def end_with(self, target):
         """
@@ -39,6 +48,9 @@ class Alpha:
         :param target: string
         :return: bool
         """
-        if len(target) > len(self.value):
+        try:
+            if len(target) > len(self.value):
+                return False
+            return self.value[len(target) * -1:] == target
+        except Exception:
             return False
-        return self.value[len(target) * -1:] == target

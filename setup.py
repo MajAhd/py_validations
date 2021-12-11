@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='PyValidations',
-    version='0.1.0-beta',
+    version='0.2.0',
     author='Majid Ahmaditabar',
     keywords='validation, data_validator , python_validator ,PyValidations',
     author_email='mjd.ahd.tbr@gmail.com',
@@ -12,14 +12,15 @@ setup(
     project_urls={
         'Bug Reports': 'https://github.com/MajAhd/py_validations/issues',
         'Source': 'https://github.com/MajAhd/py_validations/',
+        'ChangeLog': 'https://github.com/MajAhd/py_validations/blob/master/CHANGELOG.md',
         'Wiki': 'https://github.com/MajAhd/py_validations/wiki',
     },
-    license='LICENSE',
+    license='MIT',
     description='Simple and easy library to Validate data in Python',
-    long_description=open('readme.md').read() + '\n \n' + open('CHANGELOG.md').read(),
+    long_description=open('readme.md').read(),
     long_description_content_type="text/markdown",
     classifiers=[
-        'Development Status :: 1 - Planning',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
         'License :: OSI Approved :: MIT License',

@@ -104,7 +104,8 @@ class TestDateTime(unittest.TestCase):
         self.assertEqual(validate, {'errors': {'birthdate': ['The birthdate is not a valid date.'],
                                                'expired': ['The expired is not a valid datetime.'],
                                                'my_zone': ['The my_zone is not a valid Timezone.'],
-                                               'start_time': ['The start_time is not a valid time.']},
+                                               'start_time': [
+                                                   'The start_time is not a valid time.']},
                                     'failed': True})
 
     def test_pyvalidation_datetime_different_passed(self):
@@ -141,14 +142,15 @@ class TestDateTime(unittest.TestCase):
             "before_equal_bd": ["required", "before_or_equal:1990-04-17"],
         }
         validate = PyValidation.make(data, rules)
-        self.assertEqual(validate, {'errors': {'after_bd': ['The after_bd must be a date after to 1990-04-17.'],
-                                               'after_equal_bd': ['The after_equal_bd must be a date after or '
-                                                                  'equal to 1990-04-17.'],
-                                               'before_bd': ['The before_bd must be a date before to 1990-04-17.'],
-                                               'before_equal_bd': ['The before_equal_bd must be a date before or '
-                                                                   'equal to 1990-04-17.'],
-                                               'eq_bd': ['The eq_bd must be a date equal to 1990-04-17.']},
-                                    'failed': True})
+        self.assertEqual(validate, {
+            'errors': {'after_bd': ['The after_bd must be a date after to 1990-04-17.'],
+                       'after_equal_bd': ['The after_equal_bd must be a date after or '
+                                          'equal to 1990-04-17.'],
+                       'before_bd': ['The before_bd must be a date before to 1990-04-17.'],
+                       'before_equal_bd': ['The before_equal_bd must be a date before or '
+                                           'equal to 1990-04-17.'],
+                       'eq_bd': ['The eq_bd must be a date equal to 1990-04-17.']},
+            'failed': True})
 
 
 if __name__ == '__main__':

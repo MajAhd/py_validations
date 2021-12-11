@@ -1,6 +1,18 @@
 # Changelog
+
 ***
+
+## V0.2.0
+
+- Required Is
+- Required Unless
+- Required With
+- Required Without
+
+***
+
 ## V0.1.0-beta
+
 - Required
 - Accepted
 - Alpha & String
@@ -14,4 +26,5 @@
 - Different
 - Confirmation
 - Nullable
+
 ***

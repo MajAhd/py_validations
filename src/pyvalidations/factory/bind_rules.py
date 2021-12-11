@@ -57,23 +57,23 @@ class BindRules:
             case "timezone":
                 return Rules.DateTime(value).is_timezone()
             case "date_equals":
-                if Rules.DateTime(self.rule_val).is_date():
+                if Rules.DateTime(self.rule_val).is_date() and Rules.DateTime(value).is_date():
                     return Rules.DateTime(value).date_equals(self.rule_val)
                 return False
             case "after":
-                if Rules.DateTime(self.rule_val).is_date():
+                if Rules.DateTime(self.rule_val).is_date() and Rules.DateTime(value).is_date():
                     return Rules.DateTime(value).is_after(self.rule_val)
                 return False
             case "after_or_equal":
-                if Rules.DateTime(self.rule_val).is_date():
+                if Rules.DateTime(self.rule_val).is_date() and Rules.DateTime(value).is_date():
                     return Rules.DateTime(value).is_after_or_equal(self.rule_val)
                 return False
             case "before":
-                if Rules.DateTime(self.rule_val).is_date():
+                if Rules.DateTime(self.rule_val).is_date() and Rules.DateTime(value).is_date():
                     return Rules.DateTime(value).is_before(self.rule_val)
                 return False
             case "before_or_equal":
-                if Rules.DateTime(self.rule_val).is_date():
+                if Rules.DateTime(self.rule_val).is_date() and Rules.DateTime(value).is_date():
                     return Rules.DateTime(value).is_before_or_equal(self.rule_val)
                 return False
             # different Validation

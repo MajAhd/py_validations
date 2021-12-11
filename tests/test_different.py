@@ -194,7 +194,8 @@ class TestDifferent(unittest.TestCase):
                                         'str_diff': ['The str_diff must be different to MQ233.'],
                                         'str_eq': ['The str_eq must be equal to MQ100.'],
                                         'str_gt': ['The str_gt must be greater than MQ200.'],
-                                        'str_gte': ['The str_gte must be greater or equal to MQ200.'],
+                                        'str_gte': [
+                                            'The str_gte must be greater or equal to MQ200.'],
                                         'str_lt': ['The str_lt must be less than ABCD.'],
                                         'str_lte': ['The str_lte must be less or equal to ABCD.']}
                                     })

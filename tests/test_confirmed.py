@@ -8,7 +8,6 @@ class TestConfirmed(unittest.TestCase):
     def test_confirmed(self):
         passed = Rule.Confirmation("123", "123").is_confirmed()
         failed = Rule.Confirmation("123", "abc").is_confirmed()
-
         self.assertTrue(passed)
         self.assertFalse(failed)
 
@@ -19,7 +18,6 @@ class TestConfirmed(unittest.TestCase):
         }
         rules_1 = {
             "password": ["required", "confirmed"],
-
         }
         data_failed = {
             "password": "123456",
@@ -28,12 +26,12 @@ class TestConfirmed(unittest.TestCase):
         rules_2 = {
             "password": ["required", "confirmed"],
         }
-
         validate_passed = PyValidation.make(data_passed, rules_1)
         self.assertEqual(validate_passed, {'errors': {}, 'failed': False})
         validate_failed = PyValidation.make(data_failed, rules_2)
-        self.assertEqual(validate_failed, {'errors': {'password': ['The password confirmation does not match.']},
-                                           'failed': True})
+        self.assertEqual(validate_failed,
+                         {'errors': {'password': ['The password confirmation does not match.']},
+                          'failed': True})
 
 
 if __name__ == '__main__':

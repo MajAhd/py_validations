@@ -22,6 +22,8 @@ class TestAlpha(unittest.TestCase):
         self.assertFalse(failed_2)
         self.assertFalse(failed_3)
         self.assertFalse(failed_4)
+        target_type = Rule.Alpha("secretxcvvs").start_with(111)
+        self.assertFalse(target_type)
 
     def test_pyvalidation_alpha_passed(self):
         data = {
@@ -55,7 +57,8 @@ class TestAlpha(unittest.TestCase):
         validate = PyValidation.make(data, rules)
         self.assertEqual(validate, {'errors': {'end_code': ['The end_code may only end with G123.'],
                                                'name': ['The name may only contain letters.'],
-                                               'start_code': ['The start_code may only start with G123.'],
+                                               'start_code': [
+                                                   'The start_code may only start with G123.'],
                                                'user_name': ['The user_name may only string.']},
                                     'failed': True})
 

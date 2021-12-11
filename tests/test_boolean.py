@@ -25,36 +25,37 @@ class TestBoolean(unittest.TestCase):
 
     def test_pyvalidation_boolean(self):
         data = {
-            "accept_1": True,
-            "accept_2": False,
-            "accept_3": 0,
-            "accept_4": 1,
-            "accept_5": "1",
-            "accept_6": "0",
-            "accept_7": "false",
-            "accept_8": "true",
+            "bool_1": True,
+            "bool_2": False,
+            "bool_3": 0,
+            "bool_4": 1,
+            "bool_5": "1",
+            "bool_6": "0",
+            "bool_7": "false",
+            "bool_8": "true",
 
         }
         rules = {
-            "accept_1": ["required", "boolean"],
-            "accept_2": ["required", "boolean"],
-            "accept_3": ["required", "boolean"],
-            "accept_4": ["required", "boolean"],
-            "accept_5": ["required", "boolean"],
-            "accept_6": ["required", "boolean"],
-            "accept_7": ["required", "boolean"],
-            "accept_8": ["required", "boolean"],
+            "bool_1": ["required", "boolean"],
+            "bool_2": ["required", "boolean"],
+            "bool_3": ["required", "boolean"],
+            "bool_4": ["required", "boolean"],
+            "bool_5": ["required", "boolean"],
+            "bool_6": ["required", "boolean"],
+            "bool_7": ["required", "boolean"],
+            "bool_8": ["required", "boolean"],
         }
         validate = PyValidation.make(data, rules)
-        self.assertEqual(validate, {'errors': {'accept_5': ['The accept_5 may only boolean value : true , false , '
-                                                            '1 or 0.'],
-                                               'accept_6': ['The accept_6 may only boolean value : true , false , '
-                                                            '1 or 0.'],
-                                               'accept_7': ['The accept_7 may only boolean value : true , false , '
-                                                            '1 or 0.'],
-                                               'accept_8': ['The accept_8 may only boolean value : true , false , '
-                                                            '1 or 0.']},
-                                    'failed': True})
+        self.assertEqual(validate, {
+            'errors': {'bool_5': ['The bool_5 may only boolean value : true , false , 1 '
+                                  'or 0.'],
+                       'bool_6': ['The bool_6 may only boolean value : true , false , 1 '
+                                  'or 0.'],
+                       'bool_7': ['The bool_7 may only boolean value : true , false , 1 '
+                                  'or 0.'],
+                       'bool_8': ['The bool_8 may only boolean value : true , false , 1 '
+                                  'or 0.']},
+            'failed': True})
 
 
 if __name__ == '__main__':

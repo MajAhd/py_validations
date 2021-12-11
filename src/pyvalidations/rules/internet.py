@@ -22,15 +22,18 @@ class Internet:
         check url address is correct
         :return: bool
         """
-        regex = ("((http|https)://)(www.)?" +
-                 "[a-zA-Z0-9@:%._\\+~#?&//=]" +
-                 "{2,256}\\.[a-z]" +
-                 "{2,6}\\b([-a-zA-Z0-9@:%" +
-                 "._\\+~#?&//=]*)")
-        p = re.compile(regex)
-        if re.search(p, self.value):
-            return True
-        return False
+        try:
+            regex = ("((http|https)://)(www.)?" +
+                     "[a-zA-Z0-9@:%._\\+~#?&//=]" +
+                     "{2,256}\\.[a-z]" +
+                     "{2,6}\\b([-a-zA-Z0-9@:%" +
+                     "._\\+~#?&//=]*)")
+            p = re.compile(regex)
+            if re.search(p, self.value):
+                return True
+            return False
+        except Exception:
+            return False
 
     def ip(self):
         """
