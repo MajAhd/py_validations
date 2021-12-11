@@ -24,10 +24,9 @@ class Required:
 
     def required_if(self, target):
         """
-        - required_if:anotherField
-         - The field under validation must be present and not empty if the anotherField field is
-          exist and equal to any value.
-        @param target : string
+        The field under validation must be present and not empty if the anotherField field is
+        exist and equal to any value.
+        :param target : string
         :return: Boolean
         """
         if Field(self.__data, target).field_exist():
@@ -39,6 +38,7 @@ class Required:
         """
         The field under validation must be present and not empty unless the anotherField is
         Not Exist or be null or empty or "" value.
+        :param target: string
         :return: Boolean
         """
         if Field(self.__data, target).field_exist():
@@ -48,13 +48,26 @@ class Required:
 
     def required_with(self, target):
         """
+        The field under validation must be present and not empty only if any of the other
+        specified fields are present and not empty.
+        :param target: string
         :return: Boolean
         """
-        return True
+        split_fields = target.split(",")
+        res = True
+        for field in split_fields:
+            res &= self.required_if(field)
+        return res
 
     def required_without(self, target):
         """
-
+        The field under validation must be present and not empty only when any of the other specified fields
+        are empty or not present.
+        :param target: string
         :return: Boolean
         """
-        return True
+        split_fields = target.split(",")
+        res = True
+        for field in split_fields:
+            res &= self.required_unless(field)
+        return res

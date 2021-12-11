@@ -28,6 +28,10 @@ class BindRules:
                 return Rules.Required(value, self.all_data).required_if(self.rule_val)
             case "required_unless":
                 return Rules.Required(value, self.all_data).required_unless(self.rule_val)
+            case "required_with":
+                return Rules.Required(value, self.all_data).required_with(self.rule_val)
+            case "required_without":
+                return Rules.Required(value, self.all_data).required_without(self.rule_val)
             case "accepted":
                 return Rules.Accepted(value).is_accepted()
             case "boolean":

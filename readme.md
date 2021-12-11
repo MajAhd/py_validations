@@ -10,11 +10,8 @@
 Simple and easy library to Validate data in python
 
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/PyValidations)](https://pypi.python.org/pypi/PyValidations/)
-
 ![example workflow](https://github.com/MajAhd/py_validations/actions/workflows/python-package.yml/badge.svg)
-
 [![PyPI download total](https://img.shields.io/pypi/dm/PyValidations)](https://pypi.python.org/pypi/PyValidations/)
-
 [![PyPI license](https://img.shields.io/pypi/l/PyValidations)](https://pypi.python.org/pypi/PyValidations/)
 
 ## install
