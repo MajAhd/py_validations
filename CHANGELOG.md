@@ -4,7 +4,7 @@
 
 ## V0.2.0
 
-- Required Is
+- Required If
 - Required Unless
 - Required With
 - Required Without
