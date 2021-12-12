@@ -2,6 +2,16 @@
 
 ***
 
+## V0.3.0
+
+- Fie
+- Fie Mimes
+- Fie Mime Types
+- Fie Max Size
+- Fie Min Size
+
+***
+
 ## V0.2.0
 
 - Required If

@@ -55,6 +55,7 @@ PyValidations.make(data, rules)
 - [Different](https://github.com/MajAhd/py_validations/wiki/Greater-that-&-Less-Than-&-equal-&-Different-Field)
 - [Confirmation](https://github.com/MajAhd/py_validations/wiki/Confirmation)
 - [Nullable](https://github.com/MajAhd/py_validations/wiki/Nullable)
+- [File](https://github.com/MajAhd/py_validations/wiki/File)
 
 ## Author
 
