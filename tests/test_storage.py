@@ -3,8 +3,6 @@ import unittest
 import src.pyvalidations.rules as Rule
 import src.pyvalidations as PyValidation
 
-os.path.exists('./img/PyValidation.png')
-
 
 class TestStorage(unittest.TestCase):
 
