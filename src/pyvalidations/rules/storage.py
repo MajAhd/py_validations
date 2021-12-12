@@ -5,7 +5,7 @@ import mimetypes
 class Storage:
     """
     Validate File : mime , size , mime type
-     - the field under validation must be a file and at leas 1 kilobyte size
+     - the field under validation must be a file
      - empty value return error unless field is under nullable validation
     """
 
@@ -18,7 +18,6 @@ class Storage:
          :return: Boolean
         """
         try:
-            # return hasattr(self.value, 'read')
             return os.path.isfile(self.value)
         except Exception as e:
             print(e)
