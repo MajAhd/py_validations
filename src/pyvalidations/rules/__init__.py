@@ -11,4 +11,5 @@ from .internet import Internet
 from .max import Max
 from .min import Min
 from .number import Number
+from .storage import Storage
 from .uuid import Uuid

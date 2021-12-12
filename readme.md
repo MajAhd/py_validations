@@ -31,8 +31,8 @@ data = {
     "first_name": "Majid"
 }
 
-rules = { 
-    "first_name": ["required", "string", "max:128"] 
+rules = {
+    "first_name": ["required", "string", "max:128"]
 }
 
 PyValidations.make(data, rules)
@@ -61,4 +61,4 @@ PyValidations.make(data, rules)
 ***
 Majid Ahmaditabar
 
-PyValidation is released under the [MIT License](https://github.com/MajAhd/py_validations/blob/main/LICENSE).
+PyValidations is released under the [MIT License](https://github.com/MajAhd/py_validations/blob/main/LICENSE).

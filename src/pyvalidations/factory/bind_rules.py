@@ -126,5 +126,16 @@ class BindRules:
             # UUID
             case "uuid":
                 return Rules.Uuid(value).is_uuid()
+            # File
+            case "file":
+                return Rules.Storage(value).is_file()
+            case "mimes":
+                return Rules.Storage(value).mimes(self.rule_val)
+            case "mime_types":
+                return Rules.Storage(value).mime_types(self.rule_val)
+            case "max_size":
+                return Rules.Storage(value).max_size(self.rule_val)
+            case "min_size":
+                return Rules.Storage(value).min_size(self.rule_val)
             case _:
                 return "Validation Not Defined!"
