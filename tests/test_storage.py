@@ -18,6 +18,18 @@ class TestStorage(unittest.TestCase):
         self.assertTrue(passed_3)
         self.assertTrue(passed_4)
         self.assertTrue(passed_5)
+        failed_1 = Rule.Storage("").is_file()
+        failed_2 = Rule.Storage("ax.png").is_file()
+        failed_3 = Rule.Storage(file).max_size("10")
+        failed_4 = Rule.Storage(file).min_size("14")
+        failed_5 = Rule.Storage(file).mimes("jpeg,jpg")
+        failed_6 = Rule.Storage(file).mime_types("image/jpeg")
+        self.assertFalse(failed_1)
+        self.assertFalse(failed_2)
+        self.assertFalse(failed_3)
+        self.assertFalse(failed_4)
+        self.assertFalse(failed_5)
+        self.assertFalse(failed_6)
 
     def test_is_file_passed(self):
         data = {
