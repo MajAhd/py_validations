@@ -4,11 +4,11 @@
 
 ## V0.3.0
 
-- Fie
-- Fie Mimes
-- Fie Mime Types
-- Fie Max Size
-- Fie Min Size
+- File
+- File Mimes
+- File Mime Types
+- File Max Size
+- File Min Size
 
 ***
 
