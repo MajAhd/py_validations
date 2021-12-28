@@ -9,15 +9,19 @@ class TestInside(unittest.TestCase):
         passed_1 = Rule.Inside(5).is_in("1,2,3,4,5")
         passed_2 = Rule.Inside("5").is_in("1,2,3,4,5")
         passed_3 = Rule.Inside("Iran").is_in("Iran,USA,UK")
+        passed_4 = Rule.Inside("Web").is_in("Web,Mobile")
         self.assertTrue(passed_1)
         self.assertTrue(passed_2)
         self.assertTrue(passed_3)
+        self.assertTrue(passed_4)
         failed_1 = Rule.Inside(5).is_in("1,2,3,4")
         failed_2 = Rule.Inside("5").is_in("1,2,3,4")
         failed_3 = Rule.Inside("iran").is_in("Iran,USA,UK")
+        failed_4 = Rule.Inside("web").is_in("Web,Mobile")
         self.assertFalse(failed_1)
         self.assertFalse(failed_2)
         self.assertFalse(failed_3)
+        self.assertFalse(failed_4)
 
     def test_is_not_in(self):
         passed_1 = Rule.Inside(5).is_not_in("1,2,3,4")
@@ -43,7 +47,6 @@ class TestInside(unittest.TestCase):
             "north_america": ["required", "in:usa,canada"],
             "europe": ["required", "not_in:china,japan"],
             "grade": ["required", "in:a,b"],
-
         }
         validate = PyValidation.make(data, rules)
         self.assertEqual(validate, {'errors': {}, 'failed': False})

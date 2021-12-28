@@ -2,6 +2,13 @@
 
 ***
 
+## V0.3.1
+
+- Validate `in` and `not_in` errors fixed
+- `in` and `not_in` are case-sensitive
+
+***
+
 ## V0.3.0
 
 - File

@@ -14,7 +14,9 @@ class Inside:
         :param target: any
         :return: bool
         """
-        return self.value in target
+
+        validate = target.split(",")
+        return self.value in validate
 
     def is_not_in(self, target):
         """
@@ -22,4 +24,5 @@ class Inside:
         :param target: any
         :return: bool
         """
-        return self.value not in target
+        validate = target.split(",")
+        return self.value not in validate
