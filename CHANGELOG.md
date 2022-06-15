@@ -2,6 +2,12 @@
 
 ***
 
+## V0.3.2
+
+- Support Deutsch language
+
+***
+
 ## V0.3.1
 
 - Validate `in` and `not_in` errors fixed
