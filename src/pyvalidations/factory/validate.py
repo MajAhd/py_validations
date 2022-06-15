@@ -6,12 +6,20 @@ class Validate:
     """
     Data Validation factory
     """
+    __lang = "en"
 
     def __init__(self, key, value, rules, all_data):
         self.__key = key
         self.__value = value
         self.__rules = rules
         self.__all_data = all_data
+
+    def lang(self, lang):
+        """
+        set the language of validation messaged
+        """
+        self.__lang = lang
+        return self
 
     def validation(self):
         """
@@ -29,12 +37,13 @@ class Validate:
             rule_value = None if len(split_rule) < 2 else split_rule[1]
             is_passed = BindRules(rule, rule_value, self.__all_data).build(self.__key, self.__value)
             if not is_passed:
-                messages.append(BindException(self.__key, rule_value).build(rule))
+                messages.append(BindException(self.__key, rule_value).build(rule, self.__lang))
+
             if rule in ('required_if', 'required_unless', 'required_with', 'required_without'):
                 if not is_passed:
                     return []
                 is_passed_required = BindRules("required", rule_value, self.__all_data).build(self.__key, self.__value)
                 if not is_passed_required:
-                    messages.append(BindException(self.__key, rule_value).build(rule))
+                    messages.append(BindException(self.__key, rule_value).build(rule, self.__lang))
 
         return messages

@@ -10,5 +10,5 @@ disable=
     W0703, # Catching too general exception Exception (broad-except)
     R0911, #Too many return statements
     #should remove
-    R0201, #Method could be a function (no-self-use)
+    #R0201, #Method could be a function (no-self-use)
     W0238, #Unused private member `Required.__data` (unused-private-member)

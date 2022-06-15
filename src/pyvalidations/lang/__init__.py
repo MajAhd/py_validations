@@ -1,1 +1,1 @@
-from .en import En
+from .language import Languages

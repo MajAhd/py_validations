@@ -1,7 +1,7 @@
 from .factory import Validate
 
 
-def make(data, rules):
+def make(data, rules, lang="en"):
     """
     make validation
     :return: dictionary
@@ -15,7 +15,7 @@ def make(data, rules):
         rule_value = rules[rule]
         if key in data:
             data_value = data[key]
-            result = Validate(key, data_value, rule_value, data).validation()
+            result = Validate(key, data_value, rule_value, data).lang(lang).validation()
             if len(result) > 0:
                 validate["failed"] = True
                 validate["errors"][key] = result
