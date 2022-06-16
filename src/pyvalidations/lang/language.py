@@ -1,5 +1,6 @@
 from .en import En
 from .de import De
+from .fa import Fa
 
 
 class Languages:
@@ -34,5 +35,6 @@ class Languages:
         """
         return {
             "en": En(self.__key, self.__value).messages(),
-            "de": De(self.__key, self.__value).messages()
+            "de": De(self.__key, self.__value).messages(),
+            "fa": Fa(self.__key, self.__value).messages(),
         }
