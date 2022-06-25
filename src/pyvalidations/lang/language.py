@@ -1,5 +1,6 @@
 from .en import En
 from .de import De
+from .fa import Fa
 
 
 class Languages:
@@ -10,7 +11,7 @@ class Languages:
     __value = None
 
     def __init__(self, lang_name="en"):
-        self.lang_name = lang_name
+        self.lang_name = lang_name.lower()
 
     def set_key(self, key):
         """
@@ -34,5 +35,6 @@ class Languages:
         """
         return {
             "en": En(self.__key, self.__value).messages(),
-            "de": De(self.__key, self.__value).messages()
+            "de": De(self.__key, self.__value).messages(),
+            "fa": Fa(self.__key, self.__value).messages(),
         }
