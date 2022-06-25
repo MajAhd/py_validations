@@ -2,6 +2,12 @@
 
 ***
 
+## V0.3.3
+
+- Support Farsi language
+
+***
+
 ## V0.3.2
 
 - Support Deutsch language

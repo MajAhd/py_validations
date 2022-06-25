@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='PyValidations',
-    version='0.3.2',
+    version='0.3.3',
     author='Majid Ahmaditabar',
     keywords='validation, data_validator , python_validator ,PyValidations',
     author_email='mjd.ahd.tbr@gmail.com',

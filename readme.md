@@ -35,7 +35,14 @@ rules = {
     "first_name": ["required", "string", "max:128"]
 }
 
+# by default return messages in English  
 PyValidations.make(data, rules)
+
+# get error messages in Deutsch language
+PyValidations.make(data, rules , "de")
+
+# get error messages in Farsi language
+PyValidations.make(data, rules , "fa")
 
 ```
 
