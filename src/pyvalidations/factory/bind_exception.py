@@ -21,5 +21,5 @@ class BindException:
         message = Languages(lang) \
             .set_key(self.__key) \
             .set_value(self.__value) \
-            .messages()[lang]
+            .messages()[lang.lower()]
         return message[rule]

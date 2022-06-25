@@ -11,7 +11,7 @@ class Languages:
     __value = None
 
     def __init__(self, lang_name="en"):
-        self.lang_name = lang_name
+        self.lang_name = lang_name.lower()
 
     def set_key(self, key):
         """
