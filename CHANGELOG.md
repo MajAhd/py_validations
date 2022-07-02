@@ -2,6 +2,12 @@
 
 ***
 
+## V0.3.4
+
+- Upgrade setuptools
+
+***
+
 ## V0.3.3
 
 - Support Farsi language
